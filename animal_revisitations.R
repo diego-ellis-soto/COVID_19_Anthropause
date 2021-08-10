@@ -22,7 +22,7 @@ calculateTimeOfDay = function(locations, datetime)
 }
 
 
-loginStored<-movebankLogin(username="COVID-19_IBS", password="covid19ibs")
+loginStored<-movebankLogin(username="XXX", password="XXX")
 
 all_studies <- getMovebank(entity_type = "study", login=loginStored)
 
