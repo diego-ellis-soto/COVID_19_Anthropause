@@ -1,0 +1,19 @@
+loginStored<-movebankLogin(username="COVID-19_IBS", password="covid19ibs")
+
+cougar <- move('/Users/diegoellis/Downloads/Olympic Cougar Project-6479261802587306352/Olympic Cougar Project-6479261802587306352.csv')
+
+lockdown_start_usa <- as.POSIXct('2020-03-01 00:00:00')
+lockdown_easing_new_england <- as.POSIXct('2020-06-01 00:00:00')
+baseline_start <- as.POSIXct('2019-03-10 00:00:00')
+baseland_end <- as.POSIXct('2019-06-20 00:00:00')
+jday_of_baseline_end_2020 <- yday(baseland_end)
+cougar$track_id <- cougar@trackId
+summary_cougar <- ddply(  as.data.frame(cougar), 'tag.local.identifier', function(x){
+  df = data.frame( who = unique(x$track_id),
+                   track_start = range(x$timestamp)[1],
+                   track_end =  range(x$timestamp)[2]
+  )
+  df[year(df$track_end) == 2020,]
+})
+
+lillu <- cougar[['Lilu']]
