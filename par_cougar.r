@@ -236,3 +236,7 @@ foreach(i = 1:length(inds)) %do% {
   
   out[[i]] <- tmp_out               
 } # foreach ((i)) - end loop through indivdiuals
+
+#---- FINALIZE ----#
+message("Analysis complete, saving output...")
+save(out, file = glue("out/cougar_testrun_{Sys.Date()}.rdata"))

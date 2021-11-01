@@ -1,6 +1,7 @@
 # COVID-19 Animal Movement Project Notes
 
 ## TODO:
+* Can't connect to github remote - need top push, clomne onto HPC and run test across individuals
 * Once available, modify par_cougar.r to run from a mosey database
 * Currently no data cleaning - need to automate some sort of outlier, QA/QC check
 * Currently running `ctmm` on segments with no guarantee that assumptions are being met (e.g., range residence for akde)
@@ -31,4 +32,7 @@ Compare all products across lockdown conditions (before, during, after).
   * Only basic variables (e.g., NDVI, temp, elev, HFI, human mobility)
 * Niches
   * Niche breadth
-  * Pairwise niche dissimilarity
+  * Pairwise niche dissimilarity\
+  
+*Parallelization Strategy*
+The script parallelized (via `foreach`) across individuals.  Could use a job submit script a la my kiwa survival project (from Shubhi) to submit one job per species in the mosey?
