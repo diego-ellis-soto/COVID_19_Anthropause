@@ -33,6 +33,7 @@ suppressPackageStartupMessages({
   library(ctmm)
   library(glue)
   library(MVNH)
+  library(doMC)
 })
 
 # Custom functions
@@ -90,6 +91,7 @@ cougar1$baseline[cougar1$timestamp  >= lockdown_easing_new_england] <- as.charac
 # Init empty list for top-level output
 out <- list()
 
+registerDoMC(8)
 # Toggle `%do%` to `%dopar%` for HPC, %do% for local
 # foreach(i = 1:length(inds)) %do% {
 foreach(i = 1:length(inds)) %dopar% {
