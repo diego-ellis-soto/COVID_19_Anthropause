@@ -233,7 +233,7 @@ foreach(i = 1:length(inds)) %dopar% {
   
   # Niche Dissimilarity
   # get pariwise combos - eliminate comparisons to self
-  if(length(lables)>0){
+  if(length(labels)>0){
     combos <- expand_grid(comp1= labels, comp2 = labels) %>%   
       # as.data.frame() %>% 
       filter(comp1 != comp2)
