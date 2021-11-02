@@ -163,7 +163,7 @@ foreach(i = 1:length(inds)) %dopar% {
       message(glue("{nrow(tmp_move[[p]])} records found..."))
       
       #convert to telem
-      telem <- as.telemetry(tmp_base, timeformat="%Y-%m-%d %H:%M:%S")
+      telem <- as.telemetry(tmp_move[[p]], timeformat="%Y-%m-%d %H:%M:%S")
       
       # get initial guess
       guess <- ctmm.guess(telem, interactive = F)
