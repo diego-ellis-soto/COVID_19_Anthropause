@@ -5,8 +5,11 @@
 #SBATCH --mail-user scott.yanco@yale.edu
 #SBATCH -c 8
 #SBATHC --mem-per-cpu 25G
-#SBATCH -J cougars ftw
+#SBATCH -J cougarsFTW
 
 cd ~/project/covid
+
+module load miniconda
+conda activate covid
 
 Rscript ./src/par_cougar.r
