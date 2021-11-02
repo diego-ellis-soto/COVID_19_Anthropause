@@ -90,9 +90,10 @@ cougar1$baseline[cougar1$timestamp  >= lockdown_easing_new_england] <- as.charac
 # Init empty list for top-level output
 out <- list()
 
-# TODO:  toggle `%do%` to `%dopar%` for HPC
-foreach(i = 1:length(inds)) %do% {
-  
+# Toggle `%do%` to `%dopar%` for HPC, %do% for local
+# foreach(i = 1:length(inds)) %do% {
+foreach(i = 1:length(inds)) %dopar% {
+    
   
   #-- Per individual data prep --#
   message(glue("Processing data for individual {inds[i]}..."))
