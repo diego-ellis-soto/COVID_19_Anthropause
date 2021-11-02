@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#SBATCH -t 12:00:00
+#SBATCH -t 6:00:00
 #SBATCH --mail-type ALL
 #SBATCH --mail-user scott.yanco@yale.edu
-#SBATCH -c 8
+#SBATCH -c 12
 #SBATHC --mem-per-cpu 25G
 #SBATCH -J cougarsFTW
 

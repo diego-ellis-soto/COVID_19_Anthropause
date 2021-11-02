@@ -91,7 +91,7 @@ cougar1$baseline[cougar1$timestamp  >= lockdown_easing_new_england] <- as.charac
 # Init empty list for top-level output
 out <- list()
 
-registerDoMC(8)
+registerDoMC(12)
 # Toggle `%do%` to `%dopar%` for HPC, %do% for local
 # foreach(i = 1:length(inds)) %do% {
 foreach(i = 1:length(inds)) %dopar% {
@@ -184,7 +184,11 @@ foreach(i = 1:length(inds)) %dopar% {
   akde_ls <- list()
   
   for(p in 1:length(ctmm_ls)){
+    if(!is.null(ctmm_ls[[p]])){
     akde_ls[[p]] <- akde(ctmm_ls[[p]][[1]], ctmm_ls[[p]][[3]])
+    } else { 
+      akde_ls[[p]] <- NULL
+      message("No ctmm estimated, therefore no akde...")}
   } # p
   
   
