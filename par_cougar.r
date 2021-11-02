@@ -208,11 +208,13 @@ foreach(i = 1:length(inds)) %dopar% {
   niche_breadth <- list()
   #get niche MVNH-formatted objects
   for(p in 1:length(dat_df_ls)){
-    dat_tmp <- dat_df_ls[[p]] %>% 
+    tryCatch({
+      dat_tmp <- dat_df_ls[[p]] %>% 
       select(vars)
     niche_dat[[p]] <- dat_tmp
     labels[p] <- dat_df_ls[[p]]$baseline[1]
     niche_breadth[[p]] <- MVNH_det(na.omit(dat_tmp))
+    })
     }
   names(niche_breadth) <- labels
   names(niche_dat) <- labels
@@ -226,9 +228,11 @@ foreach(i = 1:length(inds)) %dopar% {
   niche_dissims <- list()
   ns <- list()
   for(c in 1:nrow(combos)){
+    tryCatch({})
     niche_dissims[[c]] <- MVNH_dissimilarity(na.omit(niche_dat[[unlist(combos[c,1])]]), 
                                              na.omit(niche_dat[[unlist(combos[c,2])]]))
     ns[[c]] <- glue("{combos[c,1]}-{combos[c,2]}")
+  })
   }
   
   names(niche_dissims) <- ns
