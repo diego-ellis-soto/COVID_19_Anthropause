@@ -211,7 +211,7 @@ foreach(i = 1:length(inds)) %dopar% {
     dat_tmp <- dat_df_ls[[p]] %>% 
       select(vars)
     niche_dat[[p]] <- dat_tmp
-    labels[p] <- dat_df_l[[p]]$baseline[1]
+    labels[p] <- dat_df_ls[[p]]$baseline[1]
     niche_breadth[[p]] <- MVNH_det(na.omit(dat_tmp))
     }
   names(niche_breadth) <- labels
