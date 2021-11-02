@@ -228,7 +228,7 @@ foreach(i = 1:length(inds)) %dopar% {
   niche_dissims <- list()
   ns <- list()
   for(c in 1:nrow(combos)){
-    tryCatch({})
+    tryCatch({
     niche_dissims[[c]] <- MVNH_dissimilarity(na.omit(niche_dat[[unlist(combos[c,1])]]), 
                                              na.omit(niche_dat[[unlist(combos[c,2])]]))
     ns[[c]] <- glue("{combos[c,1]}-{combos[c,2]}")
