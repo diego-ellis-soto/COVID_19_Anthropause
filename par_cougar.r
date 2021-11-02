@@ -160,7 +160,7 @@ foreach(i = 1:length(inds)) %dopar% {
       message("No suitable baseline records , moving to next...")
       next 
     } else{
-      message(glue("{nrow(tmp_move[[s]])} records found..."))
+      message(glue("{nrow(tmp_move[[p]])} records found..."))
       
       #convert to telem
       telem <- as.telemetry(tmp_base, timeformat="%Y-%m-%d %H:%M:%S")
