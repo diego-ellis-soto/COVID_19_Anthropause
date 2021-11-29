@@ -1,4 +1,4 @@
-name: covid
+name: /gpfs/loomis/project/jetz/sy522/conda_envs/covid
 channels:
   - syanco
   - conda-forge
@@ -20,7 +20,7 @@ dependencies:
   - boost-cpp=1.72.0=h8e57a91_0
   - bwidget=1.9.14=ha770c72_1
   - bzip2=1.0.8=h7f98852_4
-  - ca-certificates=2021.10.8=ha878542_0
+  - ca-certificates=2021.10.26=h06a4308_2
   - cairo=1.16.0=hcf35c78_1003
   - certifi=2021.10.8=py39hf3d152e_1
   - cffi=1.14.6=py39h4bc2ebd_1
@@ -158,11 +158,14 @@ dependencies:
   - r-amt=0.1.4=r35hbad8821_0
   - r-askpass=1.1=r35hcdcec82_1
   - r-assertthat=0.2.1=r35h6115d3f_1
+  - r-atlastools=1.0.0000=r35_0
   - r-backports=1.1.6=r35hcdcec82_1
   - r-base=3.5.1=hc461eb7_1012
   - r-base64enc=0.1_3=r35hcdcec82_1003
   - r-bessel=0.6_0=r35hf6b531e_0
   - r-bibtex=0.4.2.2=r35hcdcec82_0
+  - r-bit=1.1_15.2=r35hcdcec82_0
+  - r-bit64=0.9_7=r35hcdcec82_1001
   - r-boot=1.3_25=r35h6115d3f_0
   - r-broom=0.5.6=r35h6115d3f_0
   - r-callr=3.4.3=r35h6115d3f_0
@@ -213,6 +216,7 @@ dependencies:
   - r-gmedian=1.2.6=r35hbad8821_0
   - r-gmp=0.5_13.6=r35h0357c0b_0
   - r-gower=0.2.1=r35hcdcec82_1
+  - r-gridextra=2.3=r351h6115d3f_0
   - r-gsl=2.1_6=r35h228eab4_1
   - r-gtable=0.3.0=r35h6115d3f_2
   - r-haven=2.2.0=r35hde08347_0
@@ -381,4 +385,4 @@ dependencies:
   - zipp=3.6.0=pyhd8ed1ab_0
   - zlib=1.2.11=h36c2ea0_1013
   - zstd=1.5.0=ha95c52a_0
-prefix: /home/syanco/mambaforge/envs/covid
+prefix: /gpfs/loomis/project/jetz/sy522/conda_envs/covid

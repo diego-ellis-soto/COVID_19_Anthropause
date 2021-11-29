@@ -94,7 +94,7 @@ out <- list()
 registerDoMC(12)
 # Toggle `%do%` to `%dopar%` for HPC, %do% for local
 # foreach(i = 1:length(inds)) %do% {
-foreach(i = 1:length(inds)) %dopar% {
+out <- foreach(i = 1:length(inds)) %dopar% {
   
   
   #-- Per individual data prep --#
@@ -148,6 +148,7 @@ foreach(i = 1:length(inds)) %dopar% {
   
   
   #-- Continuous-time Movement Models --#
+  
   # TODO:  There is no guarantee of range residency here - need to build in a 
   #   segmentation step and a filter.
   
@@ -262,7 +263,8 @@ foreach(i = 1:length(inds)) %dopar% {
                   niche_dissims = niche_dissims # named list of niche dissimilarity comparisons
   )
   
-  out[[i]] <- tmp_out               
+  return(tmp_out)
+  # out[[i]] <- tmp_out               
 } # foreach ((i)) - end loop through indivdiuals
 
 #---- FINALIZE ----#
