@@ -5,7 +5,7 @@
 #SBATCH --mail-user scott.yanco@yale.edu
 #SBATCH -c 12
 #SBATHC --mem-per-cpu 25G
-#SBATCH -J cougarsFTW
+#SBATCH -J bears
 
 cd ~/project/covid
 

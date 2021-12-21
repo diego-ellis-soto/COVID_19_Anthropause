@@ -22,7 +22,7 @@ library(ctmm)
 
 #---- Load data ----#
 load("out/cougar_testrun_2021-11-22.rdata")
-
+load("out/cougar_testrun_2021-12-07.rdata")
 
 #---- Move Metrics ----#
 
@@ -105,9 +105,9 @@ for(i in 1:length(out)){
 
 hrdat <- do.call("rbind", list(do.call("rbind", prehr), do.call("rbind", ldhr), do.call("rbind", afthr)))
 
-ggplot(hrdat, aes(x = phase, y = est))+
+ggplot(hrdat[hrdat$est < 200,], aes(x = phase, y = est))+
   geom_boxplot()+
-  ylim(c(0, 1500))+
+  # ylim(c(0, 1000))+
   theme_minimal()
 
 
@@ -137,7 +137,7 @@ for(i in 1:length(out)){
 
 nbdat <- do.call("rbind", list(do.call("rbind", prenb), do.call("rbind", ldnb), do.call("rbind", aftnb)))
 
-ggplot(nbdat, aes(x = phase, y = breadth))+
+ggplot(nbdat[nbdat$breadth < 1000,], aes(x = phase, y = breadth))+
   geom_boxplot()+
   # ylim(c(0, 1500))+
   theme_minimal()

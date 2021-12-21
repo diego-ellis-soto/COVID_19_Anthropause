@@ -64,8 +64,8 @@ jday_of_baseline_end_2020 <- yday(baseland_end)
 #---- Download Data ----#
 
 # cougar0 <- getMovebankData(study = 1674593154, login = loginStored)
-cougar0 <- move('data/Olympic Cougar Project-6479261802587306352.csv')
-
+# cougar0 <- move('data/Olympic Cougar Project-6479261802587306352.csv')
+cougar0 <- move('data/Ursus ursus-1251326067098593977.csv')
 #----     ----#
 
 
@@ -200,9 +200,11 @@ out <- foreach(i = 1:length(inds)) %dopar% {
   #-- Niche Hypervolumes --#
   
   # declare variables
-  vars <- c("MODIS.Land.Surface.Temp...Emissivity.1km.Daily.Terra.Land.Surface.Temperature.Day",
-            "MODIS.Land.Vegetation.Indices.250m.16d.Terra.NDVI")
+  # vars <- c("MODIS.Land.Surface.Temp...Emissivity.1km.Daily.Terra.Land.Surface.Temperature.Day",
+            # "MODIS.Land.Vegetation.Indices.250m.16d.Terra.NDVI")
   
+  vars <- c("MODIS.Land.Vegetation.Indices.1km.16d.Aqua.NDVI", 
+            "SEDAC.GPW.V3.and.GRUMP.V1.GRUMP.2000.Population.Density.Adjusted")
   # Niche Breadth
   niche_dat <- list()
   labels <- c()
