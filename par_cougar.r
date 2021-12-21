@@ -155,6 +155,7 @@ out <- foreach(i = 1:length(inds)) %dopar% {
   #- Fit the movement models
   ctmm_ls <- list()
   
+  
   for(p in 1:length(tmp_move)){
     # Baseline
     # check that subset results in observations
