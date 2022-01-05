@@ -1,11 +1,11 @@
-###################################################
-#                                                 #
-#   Parallel COVID-Movement Development Script    #
-#     Scott Yanco, PhD;  scott.yanco@yale.edu     #
-#      Base on dev script `olympic_cougar.r`      #
-#             by Diego Ellis-Soto                 #
-#                                                 #
-###################################################
+            ###################################################
+            #                                                 #
+            #   Parallel COVID-Movement Development Script    #
+            #     Scott Yanco, PhD;  scott.yanco@yale.edu     #
+            #      Base on dev script `olympic_cougar.r`      #
+            #             by Diego Ellis-Soto                 #
+            #                                                 #
+            ###################################################
 
 # Parallelized version of basic workflow script. Downloads movestack object from
 # MoveBank directly. 
